@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - Entry point
@@ -10,28 +11,29 @@
  */
 int main(void)
 {
-    int num1;
-    int num2;
+    int tens1, ones1, tens2, ones2;
 
-    for (num1 = 0; num1 <= 98; num1++)
+    for (tens1 = 0; tens1 <= 9; tens1++)
     {
-        for (num2 = num1 + 1; num2 <= 99; num2++)
+        for (ones1 = 0; ones1 <= 9; ones1++)
         {
-            int tens1 = num1 / 10;
-            int ones1 = num1 % 10;
-            int tens2 = num2 / 10;
-            int ones2 = num2 % 10;
-
-            putchar(tens1 + '0');
-            putchar(ones1 + '0');
-            putchar(' ');
-            putchar(tens2 + '0');
-            putchar(ones2 + '0');
-
-            if (!(num1 == 98 && num2 == 99))
+            for (tens2 = tens1; tens2 <= 9; tens2++)
             {
-                putchar(',');
-                putchar(' ');
+                int start = (tens1 == tens2) ? ones1 : 0;
+                for (ones2 = start; ones2 <= 9; ones2++)
+                {
+                    putchar(tens1 + '0');
+                    putchar(ones1 + '0');
+                    putchar(' ');
+                    putchar(tens2 + '0');
+                    putchar(ones2 + '0');
+
+                    if (tens1 != 9 || ones1 != 8 || tens2 != 9 || ones2 != 9)
+                    {
+                        putchar(',');
+                        putchar(' ');
+                    }
+                }
             }
         }
     }
@@ -45,3 +47,4 @@ void putchar(int c)
 {
     write(1, &c, 1);
 }
+
