@@ -14,11 +14,11 @@ int main(void)
 
     while (i < 10)
     {
-        putchar(i);
+        putchar(i + '0');  /* Convert i to character */
         i++;  /* Increment i to prevent infinite loop */
     }
 
-    printf("Infinite loop avoided! \\o/\n");
+    printf("\nInfinite loop avoided! \\o/\n");
 
     return (0);
 }
