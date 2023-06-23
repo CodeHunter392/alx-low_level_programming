@@ -1,4 +1,4 @@
-#include "main.h"
+#include "0-putchar.h"
 
 /**
  * _putchar - Prints a character to the standard output (stdout)
@@ -9,5 +9,5 @@
  */
 int _putchar(char c)
 {
-	return write(1, &c, 1);
+    return write(1, &c, 1);
 }
