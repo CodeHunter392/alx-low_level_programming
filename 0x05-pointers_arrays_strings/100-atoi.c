@@ -30,12 +30,12 @@ int _atoi(char *s)
 	{
 		int digit = s[i] - '0';
 
-		if (result > (INT_MAX - digit) / 10)
+		if (result > (result * 10 + digit))
 		{
 			if (sign == 1)
-				return (INT_MAX);
+				return (-2147483648);
 			else
-				return (INT_MIN);
+				return (2147483647);
 		}
 
 		result = result * 10 + digit;
@@ -44,3 +44,4 @@ int _atoi(char *s)
 
 	return (sign * result);
 }
+
