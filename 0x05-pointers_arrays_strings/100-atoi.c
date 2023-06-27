@@ -1,4 +1,5 @@
 #include "main.h"
+#include <limits.h>
 
 /**
  * _atoi - Converts a string to an integer.
@@ -40,5 +41,6 @@ int _atoi(char *s)
 		result = result * 10 + digit;
 		i++;
 	}
+
 	return (sign * result);
 }
